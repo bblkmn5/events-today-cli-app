@@ -1,5 +1,8 @@
-require "events_today/version"
+require 'open-uri'
+require 'pry'
+require 'nokogiri'
 
-module EventsToday
-  # Your code goes here...
-end
+require_relative "events_today/version"
+require_relative "events_today/cli"
+require_relative "events_today/event"
+require_relative "events_today/scraper"

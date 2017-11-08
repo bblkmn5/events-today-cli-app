@@ -1,0 +1,3 @@
+class EventsToday::CLI
+    
+end 
