@@ -16,6 +16,22 @@ go to events, find the featured events
          event_2.genre = "Music, Arts, Happy Hour"
          event_2.url = "http://www.santacruz.com/events"
 
+
+     @@all = []
+
+     def initialize(name, genre, location, description, url)
+         @name = name
+         @genre = genre
+         @location = location
+         @description = description
+         @url = url
+         @@all << self
+     end
+
+     def self.all
+         @@all
+     end
+
      doc = Nokogiri::HTML(open("http://www.santacruz.com/events"))
      name = doc.search(
      location = doc.search(

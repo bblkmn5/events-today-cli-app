@@ -1,5 +1,6 @@
 class EventsToday::CLI
     def call
+        @events = EventsToday::Event
         list
         start
     end 
@@ -8,9 +9,11 @@ class EventsToday::CLI
         puts ""
         puts "------Events Today in Santa Cruz, CA------"
         puts ""
-        puts "1. Jewel Theatre Presents - at The Colligan Theater - Music, Theater, Arts"
-        puts "2. Swing Dance Night at Abbott Square - at Abbott Square - Music, Dance"
+        EventsToday::Event.today.each.with_index(1) do |event, i|
+            puts "#{i}. #{event.name} - #{event.location} - #{event.genre}"
+            puts ""
         puts ""
+        end
     end 
 
     def start
@@ -43,10 +46,10 @@ class EventsToday::CLI
         puts ""
         puts "Event: Name"
         puts "Genre: Genre"
-        puts "Location: location"
+        puts "Location: Location"
         puts ""
         puts "Description: Description"
         puts ""
-        puts "For more information, visit: event URL"
+        puts "For more information, visit: URL"
     end 
 end 
