@@ -1,4 +1,4 @@
-class Scraper
+class EventsToday::Scraper
 
    
 end
