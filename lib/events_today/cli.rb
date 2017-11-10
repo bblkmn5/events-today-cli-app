@@ -1,6 +1,6 @@
 class EventsToday::CLI
     def call
-        @events = EventsToday::Event
+        EventsToday::Scraper.new
         list
         start
     end 
@@ -9,9 +9,8 @@ class EventsToday::CLI
         puts ""
         puts "------Events Today in Santa Cruz, CA------"
         puts ""
-        EventsToday::Event.today.each.with_index(1) do |event, i|
+        EventsToday::Event.all.each.with_index(1) do |event, i|
             puts "#{i}. #{event.name} - #{event.location} - #{event.genre}"
-            puts ""
         puts ""
         end
     end 
@@ -44,12 +43,12 @@ class EventsToday::CLI
         puts ""
         puts "Great Choice!"
         puts ""
-        puts "Event: Name"
-        puts "Genre: Genre"
-        puts "Location: Location"
+        puts "Event: #{EventsToday::Event.all[input].name}"
+        puts "Genre: #{EventsToday::Event.all[input].genre}"
+        puts "Location: #{EventsToday::Event.all[input].location}"
         puts ""
-        puts "Description: Description"
+        puts "Description: #{EventsToday::Event.all[input].description}"
         puts ""
-        puts "For more information, visit: URL"
+        puts "For more information, visit: #{EventsToday::Event.all[input].url}"
     end 
 end 
