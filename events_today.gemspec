@@ -1,4 +1,3 @@
-
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "events_today/version"
@@ -9,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Ben Blackman"]
   spec.email         = ["bblkmn5@gmail.com"]
 
-  spec.summary       = %q{events today in Santa Cruz}
-  spec.description   = %q{events today in Santa Cruz}
+  spec.summary       = %q{Events Today in Santa Cruz, CA}
+  spec.description   = %q{Provides Featured events today in Santa Cruz, California}
   spec.homepage      = "https://github.com/bblkmn5/events-today-cli-app"
   spec.license       = "MIT"
 
